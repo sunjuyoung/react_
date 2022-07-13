@@ -1,0 +1,16 @@
+body{
+    background-color: gainsboro;
+}
+
+.container{
+    margin: auto;
+    width: 600px;
+}
+
+.todoBlock{
+   padding: 30px;
+   margin-top: 50px;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: -9px 19px 13px rgb(0, gre0en, 0);
+}
