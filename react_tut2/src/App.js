@@ -33,7 +33,9 @@ const handleSubmit=(e)=>{
   setValue("");
 };
 
-
+const handleAllDelete = ()=>{
+  setTodoData([]);
+}
 
   return (
       <div className='flex  justify-center w-screen h-screen bg-blue-50'>
@@ -41,6 +43,7 @@ const handleSubmit=(e)=>{
         <Form setValue={setValue} handleSubmit={handleSubmit} value={value}></Form>
           <div className='flex justify-between mb-3'>
             <h1 className='font-bold underline'>할일 목록</h1>
+            <button onClick={handleAllDelete}>전체 삭제</button>
           </div>
           <div>
           <List handleClick={handleClick} todoData={todoData} setTodoData={setTodoData}></List>
