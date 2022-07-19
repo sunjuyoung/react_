@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import './App.css'
 import List from './components/List';
 
@@ -7,11 +7,17 @@ import Form from './components/Form';
 
 
 const App = () => {
+  console.log("App component");
 
 const [todoData, setTodoData] = useState([]);
 const [value, setValue] = useState("");
 
 
+
+const handleClick= useCallback((id)=>{
+  let newTodoData = todoData.filter((data)=> data.id !== id);
+    setTodoData(newTodoData);
+},[todoData]);
 
 const handleSubmit=(e)=>{
   e.preventDefault();
@@ -37,7 +43,7 @@ const handleSubmit=(e)=>{
             <h1 className='font-bold underline'>할일 목록</h1>
           </div>
           <div>
-          <List todoData={todoData} setTodoData={setTodoData}></List>
+          <List handleClick={handleClick} todoData={todoData} setTodoData={setTodoData}></List>
           </div>
           
         </div>
